@@ -3,9 +3,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:7.3.3
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-ARG BUILD_ARCH
 
-ARG K3S_VERSION=1.1.10-3
+ARG K3S_VERSION=v1.29.3+k3s1
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -15,8 +14,6 @@ ENV INSTALL_K3S_VERSION=${K3S_VERSION}
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
-    && ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && curl -sfL https://get.k3s.io | sh - \
     && rm -fr  \
         /tmp/* \
@@ -26,7 +23,7 @@ RUN apt-get update \
 # Copy root filesystem
 COPY rootfs /
 
-EXPOSE 2379 2380 6443 8472/udp 10250 51820/udp 51821/udp 5001 6443
+EXPOSE 2379 2380 6443 8472/udp 10250 51820/udp 51821/udp 5001
 
 # Build arguments
 ARG BUILD_DATE

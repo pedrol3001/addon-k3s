@@ -18,7 +18,6 @@ ports:
   51820/udp: 51820
   51821/udp: 51821
   5001/tcp: 5001
-  6443/tcp: 6443
 
 ports_description:
   2379/tcp: Servers - Required only for HA with embedded etcd
@@ -29,6 +28,5 @@ ports_description:
   51820/udp: Required only for Flannel Wireguard with IPv4
   51821/udp: Required only for Flannel Wireguard with IPv6
   5001/tcp: Required only for embedded distributed registry (Spegel)
-  6443/tcp: Required only for embedded distributed registry (Spegel)
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
