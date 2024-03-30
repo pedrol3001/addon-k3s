@@ -11,6 +11,7 @@ ARG K3S_VERSION=v1.29.3+k3s1
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV INSTALL_K3S_VERSION=${K3S_VERSION}
+ENV INSTALL_K3S_SKIP_START=true
 
 # hadolint ignore=DL3008
 RUN apt-get update \
