@@ -5,7 +5,7 @@ slug: k3s
 description: K3S add-on by Community Home Assistant Add-ons
 url: https://github.com/pedrol3001/addon-k3s
 codenotary: contact@pedrol.me
-privileged: SYS_ADMIN
+privileged: [ SYS_ADMIN ]
 init: false
 arch:
   - aarch64
