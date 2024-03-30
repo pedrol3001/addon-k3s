@@ -1,0 +1,10 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: NK3S8N
+# Runs K3S script
+# ==============================================================================
+
+bashio::log.info "Starting K3S hbbr..."
+
+exec k3s server

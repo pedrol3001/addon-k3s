@@ -1,0 +1,8 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: K3S
+# K3S init script, runs before any other service
+# ==============================================================================
+
+bashio::log.info "Configuring K3S..."
