@@ -2,7 +2,6 @@
 
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports aarch64 Architecture][aarch64-shield]
-
 [![Github Actions][github-actions-shield]][github-actions]
 [![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]](LICENSE.md)
@@ -15,11 +14,11 @@
 
 ## About
 
-Since [K3S][k3s] can be self-hosted, this addon aims to create a k3s instance inside home assiatant.
+Since [K3S][k3s] can be self-hosted, this addon aims to create a k3s server inside home assistant.
 
 ## Features
 
-- K3S server and relay
+- K3S server
 
 ## Support
 
