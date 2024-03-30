@@ -3,6 +3,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:7.3.3
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
+ARG BUILD_ARCH
 
 ARG K3S_VERSION=v1.29.3+k3s1
 
@@ -14,7 +15,7 @@ ENV INSTALL_K3S_VERSION=${K3S_VERSION}
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
-    && curl -sfL https://get.k3s.io | sh - \
+    && curl -sfL https://get.k3s.io | sh -s - --docker \
     && rm -fr  \
         /tmp/* \
         /var/{cache,log}/* \
