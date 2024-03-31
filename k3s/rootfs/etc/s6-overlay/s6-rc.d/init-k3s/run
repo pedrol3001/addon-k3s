@@ -19,7 +19,7 @@ if [ "$(bashio::config.true 'db_type')" == "mysqldb" ]; then
 elif [ "$(bashio::config.true 'db_type')" == "postgresdb" ]; then
   db_url="postgres://$(bashio::config 'db_user'):$(bashio::config 'db_password')@$(bashio::config 'db_host'):^$(bashio::config 'db_port')/$(bashio::config 'db_name')";
 else
-  db_url="file:/config/data/database.db"
+  db_url="sqlite:///config/data/k3s.db"
 fi
 
 bashio::var.json \
