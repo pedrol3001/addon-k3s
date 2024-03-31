@@ -6,6 +6,7 @@ description: K3S add-on by Community Home Assistant Add-ons
 url: https://github.com/pedrol3001/addon-k3s
 codenotary: contact@pedrol.me
 init: false
+full_access: true
 map:
   - addon_config:rw
 arch:
@@ -20,7 +21,6 @@ ports:
   51820/udp: 51820
   51821/udp: 51821
   5001/tcp: 5001
-
 ports_description:
   2379/tcp: Servers - Required only for HA with embedded etcd
   2380/tcp: Servers - Required only for HA with embedded etcd
