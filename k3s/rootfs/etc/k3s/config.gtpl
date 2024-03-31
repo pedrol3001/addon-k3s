@@ -1,2 +1,3 @@
 datastore-endpoint: "{{.db_url}}"
-data_dir: /config/data
+data-dir: /config/data
+write-kubeconfig-mode: 644
