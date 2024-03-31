@@ -5,7 +5,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:7.3.3
 FROM ${BUILD_FROM}
 ARG BUILD_ARCH
 
-ARG =v1.29.3+k3s1
+ARG K3S_VERSION=v1.29.3+k3s1
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -17,8 +17,7 @@ ENV INSTALL_K3S_SKIP_START=true
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
-    && curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/${K3S_VERSION}/k3s \
-    && chmod a+x /usr/local/bin/k3s \
+    && curl -sfL https://get.k3s.io | sh - \
     && rm -fr  \
         /tmp/* \
         /var/{cache,log}/* \
