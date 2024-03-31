@@ -5,6 +5,6 @@
 # Runs K3S script
 # ==============================================================================
 
-bashio::log.info "Starting K3S hbbr..."
+bashio::log.info "Starting K3S..."
 
 exec k3s server --debug --config /data/config.yaml

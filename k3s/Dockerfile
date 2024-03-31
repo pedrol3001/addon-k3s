@@ -17,7 +17,8 @@ ENV INSTALL_K3S_SKIP_START=true
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
-    && curl -sfL https://get.k3s.io | sh -s - --docker \
+    && mkdir /config/data \
+    && curl -sfL https://get.k3s.io | sh -s - --docker --data-dir="/config/data" \
     && rm -fr  \
         /tmp/* \
         /var/{cache,log}/* \
