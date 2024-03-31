@@ -7,4 +7,4 @@
 
 bashio::log.info "Starting K3S..."
 
-exec k3s server --config /data/config.yaml
+exec k3s server --config "/data/config.yaml"
