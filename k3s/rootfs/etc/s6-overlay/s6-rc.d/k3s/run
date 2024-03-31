@@ -12,4 +12,4 @@ if ! bashio::fs.directory_exists '/config/data'; then
     mkdir -p /config/data || bashio::exit.nok "Failed to create k3s configuration directory"
 fi
 
-exec k3s server --debug --docker --write-kubeconfig-mode "0644" --data-dir "/config/data"
+exec k3s server --debug --write-kubeconfig-mode "0644" --data-dir "/config/data"
