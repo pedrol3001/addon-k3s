@@ -9,11 +9,6 @@ bashio::log.info "Configuring K3S..."
 
 declare db_url
 
-# Ensure configuration data directory exists
-if ! bashio::fs.directory_exists '/config/data'; then
-    mkdir -p /config/data || bashio::exit.nok "Failed to create k3s configuration directory"
-fi
-
 if [ "$(bashio::config.true 'db_type')" == "mysqldb" ]; then
   db_url="mysql://$(bashio::config 'db_user'):$(bashio::config 'db_password')@tcp($(bashio::config 'db_host'):^$(bashio::config 'db_port'))/$(bashio::config 'db_name')";
 elif [ "$(bashio::config.true 'db_type')" == "postgresdb" ]; then
