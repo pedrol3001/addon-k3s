@@ -23,7 +23,7 @@ else
 fi
 
 bashio::var.json \
-    db_url "$(db_url)" \
+    db_url "$db_url" \
     | tempio \
         -template /etc/k3s/config.gtpl \
         -out /data/config.yaml
