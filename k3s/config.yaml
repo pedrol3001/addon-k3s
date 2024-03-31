@@ -30,15 +30,3 @@ ports_description:
   51820/udp: Required only for Flannel Wireguard with IPv4
   51821/udp: Required only for Flannel Wireguard with IPv6
   5001/tcp: Required only for embedded distributed registry (Spegel)
-schema:
-  db_type: list(sqlite|postgresdb|mysqldb)
-  k3s_token: str
-  log_level: list(trace|debug|info|notice|warning|error|fatal)?
-  db_name: str?
-  db_host: str?
-  db_port: port?
-  db_user: str?
-  db_password: str?
-options:
-  db_type: sqlite
-  k3s_token: "CHANGEME"
