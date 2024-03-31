@@ -17,6 +17,7 @@ ENV INSTALL_K3S_SKIP_START=true
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
+    && curl https://releases.rancher.com/install-docker/20.10.sh | sh \
     && curl -sfL https://get.k3s.io | sh - \
     && rm -fr  \
         /tmp/* \
