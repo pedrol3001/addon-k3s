@@ -24,6 +24,7 @@ fi
 
 bashio::var.json \
     db_url "$db_url" \
+    k3s_token "$(bashio::config 'k3s_token')" \
     | tempio \
         -template /etc/k3s/config.gtpl \
         -out /data/config.yaml
