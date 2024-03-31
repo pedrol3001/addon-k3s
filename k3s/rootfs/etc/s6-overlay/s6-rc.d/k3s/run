@@ -7,4 +7,9 @@
 
 bashio::log.info "Starting K3S..."
 
-exec k3s server --debug --write-kubeconfig-mode "0644" --data-dir "/config/data"
+# Ensure configuration data directory exists
+if ! bashio::fs.directory_exists '/config/data'; then
+    mkdir -p /config/data || bashio::exit.nok "Failed to create k3s configuration directory"
+fi
+
+exec k3s server --debug --write-kubeconfig-mode"0644" --data-dir "/config/data"
