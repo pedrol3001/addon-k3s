@@ -19,7 +19,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
     && mkdir /config \
     && mkdir /config/data \
-    && curl -sfL https://get.k3s.io | sh -s - --docker --data-dir="/config/data" \
+    && curl -sfL https://get.k3s.io | sh -s - --data-dir="/config/data" \
     && rm -fr  \
         /tmp/* \
         /var/{cache,log}/* \
