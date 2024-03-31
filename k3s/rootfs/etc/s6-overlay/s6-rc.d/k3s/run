@@ -7,4 +7,4 @@
 
 bashio::log.info "Starting K3S..."
 
-exec k3s server --config "/data/config.yaml" --data-dir "/config/data"
+exec k3s server --debug --write-kubeconfig-mode "0644" --data-dir "/config/data"
