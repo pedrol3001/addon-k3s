@@ -17,8 +17,6 @@ ENV INSTALL_K3S_SKIP_START=true
 # hadolint ignore=DL3008
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl systemd \
-    && echo "root:x:0:0:root:/:/bin/sh" > /etc/passwd && \
-    && echo "root:x:0:" > /etc/group && \
     && curl -sfL https://get.k3s.io | sh - \
     && rm -fr  \
         /tmp/* \
